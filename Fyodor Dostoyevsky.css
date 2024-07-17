@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.logo {
+    font-family: 'Kode Mono', monospace;
+    font-weight: 500;
+    font-size: 3rem;
+    color: #C0C0C0; /* Changed color to silver */
+    text-decoration: none;
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFD700, 0 0 25px #FFD700;
+    }
+    100% {
+        text-shadow: 0 0 10px #FFD700, 0 0 15px #FFD700, 0 0 20px #FFD700, 0 0 25px #FFD700;
+    }
+}
+
+.listBooks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .listBooks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.book {
+    background: linear-gradient(black, #1A1A1A);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(72, 72, 72, 0.5);
+    text-align: center;
+}
+
+
+.book h2 {
+    font-family: "Recursive", sans-serif;
+    color: #D3D3D3;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.book p {
+    font-size: 14px;
+    color: #D3D3D3;
+    margin-bottom: 10px;
+}
+
+.readButton {
+    position: relative;
+    padding: 4px 15px; 
+    border-radius: 7px;
+    border: 1px solid #C0C0C0;
+    font-size: 14px;
+    letter-spacing: 0;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+}
+
+.readButton:hover {
+    background: #C0C0C0;
+    box-shadow: 0 0 30px 5px rgba(192, 192, 192, 0.815);
+}
+
+.readButton:hover::before {
+    animation: sh02 0.5s 0s linear;
+}
+
+.readButton::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #C0C0C0;
+    box-shadow: 0 0 50px 30px #C0C0C0;
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.readButton:active {
+    box-shadow: 0 0 0 0 transparent;
+}
+
+.block {
+    position: relative;
+    border-radius: 25px;
+    background: linear-gradient(0deg, #000, #1A1A1A);
+}
+
+.glow::before, .glow::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #A9A9A9, #808080, #696969, #A9A9A9, #808080, #696969);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    border-radius: 10px;
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.glow::after {
+    filter: blur(40px);
+}
+
+.book h2 {
+    font-weight: 400;
+    font-size: medium;
+}
+
+.listBooks {
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#bk2 {
+    width: 100%;
+}
+
+.readButton:hover {
+    color: #000000;
+}
+
+.show {
+    display: block;
+}
